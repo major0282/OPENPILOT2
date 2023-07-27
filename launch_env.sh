@@ -15,3 +15,4 @@ if [ -z "$PASSIVE" ]; then
 fi
 
 export STAGING_ROOT="/data/safe_staging"
+export FINGERPRINT="JEEP GRAND CHEROKEE V6 2018"
