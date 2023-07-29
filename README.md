@@ -16,7 +16,7 @@ https://github.com/hardcoded-fp/openpilot/branches
 
 Let's do an example.
 
-Say you have a "HYUNDAI SANTA FE HYBRID 2022", but it's not fingerprinted in comma's `release3` branch for whatever reason and currently shows `Car Unrecognized: Dashcam Mode`. At the time of this README, Hyundai is going through some sort of firmware interrogation overhaul so upstreaming fingerprints is a bit blocked. With this repository, you would find the corresponding branch in the [branch list](https://github.com/hardcoded-fp/openpilot/branches). In this case, the corresponding branch is `hyundai_santa_fe_hybrid_2022`.
+Say you have a "HYUNDAI SANTA FE HYBRID 2022", but it's not fingerprinted in comma's `release3` branch for whatever reason and currently shows `Car Unrecognized: Dashcam Mode`. At the time of this README, Hyundai is going through some sort of firmware interrogation overhaul so upstreaming fingerprints is a bit blocked. With this repository, you would find the corresponding branch in the [branch list](https://github.com/hardcoded-fp/openpilot/branches). In this case, the corresponding branch is `release3-hyundai_santa_fe_hybrid_2022`.
 
 Then construct the following URL for the [URL installer](https://github.com/commaai/openpilot/wiki/Forks#url-installers-at-installation-screen) that you can enter into your comma device and enter it in as "Custom Software" on the installation screen:
 
