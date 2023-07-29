@@ -71,6 +71,8 @@ def prepare_op_repo():
   logging.info("Setting up openpilot repo. Ignore errors if it already exists.")
 
   os.system("git clone -b master-ci https://github.com/commaai/openpilot.git comma_openpilot")
+  # Make sure that comma_openpilot is usiing that as the origin.
+  os.system("cd comma_openpilot && git remote set-url origin https://github.com/commaai/openpilot.git")
   os.system("cd comma_openpilot && git fetch origin")
   os.system("cd comma_openpilot && git checkout release3 && git reset --hard origin/release3")
   os.system("cd comma_openpilot && git checkout master-ci && git reset --hard origin/master-ci")
@@ -119,7 +121,10 @@ def main():
   # Run the command to push to origin all the branches
   logging.info("Pushing branches to origin")
   # Hardcoded
-  os.system("cd comma_openpilot && git push --force https://github.com/hardcoded-fp/openpilot --all")
+  # Copy .git/config from this git repo to comma_openpilot repo
+  # This might make GitHub Actions work
+  os.system("cp .git/config comma_openpilot/.git/config")
+  os.system("cd comma_openpilot && git push --force origin --all")
 
 
 
