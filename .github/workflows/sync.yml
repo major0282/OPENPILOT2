@@ -1,0 +1,23 @@
+name: Continuous Sync
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+  push:
+    branches:
+      - docs
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Be GitHub Actions Bot for Git
+        run: |
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+      # Run python generate.py
+      - name: Run python generate.py
+        run: |
+          python3 generate.py
