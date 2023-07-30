@@ -3,13 +3,14 @@
 import ast
 import logging
 import os
+import pprint
 
 logging.basicConfig(level=logging.INFO, format="%(message)s")
 
 base_branches = ["master-ci", "release3"]
 
 
-def parse_cars():
+def parse_cars(branch):
     """
     Parse the file with ast for a class named "CAR" and get a list of all the cars.
     We are looking for the values in quotes.
@@ -35,6 +36,9 @@ def parse_cars():
       ...
     ]
     """
+    # Checkout branch
+    os.system(f"cd comma_openpilot && git checkout --force {branch}")
+
     paths = ["comma_openpilot/selfdrive/car/hyundai/values.py"]
 
     cars = []
@@ -49,7 +53,7 @@ def parse_cars():
                             cars.append(c.value.s)
 
     # Log the cars
-    logging.info("Found %d cars", len(cars))
+    logging.info("Found %d cars in %s", len(cars), branch)
 
     return cars
 
@@ -104,35 +108,38 @@ def generate_branch(base, car):
     return branch_name
 
 
-def main():
+def main(push=True):
     prepare_op_repo()
-    cars = parse_cars()
-    # Prepare OP repo
-    # Limit to 1 car for now
-    # cars = cars[:1]
-    logging.info("Generating %d cars", len(cars))
 
-    branch_names = []
+    base_cars = {}
     for base in base_branches:
-        for car in cars:
-            logging.info("Generating branch for %s", car)
-            branch_name = generate_branch(base, car)
-            branch_names.append(branch_name)
+        base_cars[base] = parse_cars(base)
 
-    logging.info("Done generating %d branches", len(branch_names))
+    base_cars_base_branches = {}
+    for base in base_branches:
+        base_cars_base_branches[base] = {}
+        for car in base_cars[base]:
+            branch = generate_branch(base, car)
+            base_cars_base_branches[base][car] = branch
+    logging.info("Done generating branches")
 
-    # Log the branch names
-    logging.info("Branch names:")
-    for branch_name in branch_names:
-        logging.info(branch_name)
-    # Run the command to push to origin all the branches
-    logging.info("Pushing branches to origin")
-    # Hardcoded
-    # Copy .git/config from this git repo to comma_openpilot repo
-    # This might make GitHub Actions work
-    os.system("cp .git/config comma_openpilot/.git/config")
-    os.system("cd comma_openpilot && git push --force origin --all")
+    # Log base_cars_base_branches
+    logging.info("base_cars_base_branches:")
+    logging.info(pprint.pformat(base_cars_base_branches))
 
+    if push:
+        # Run the command to push to origin all the branches
+        # Copy .git/config from this git repo to comma_openpilot repo
+        # This might make GitHub Actions work
+        os.system("cp .git/config comma_openpilot/.git/config")
+        logging.info("Pushing branches to origin")
+        os.system("cd comma_openpilot && git push origin --force --all")
 
 if __name__ == "__main__":
-    main()
+    # Check if args has dry run, if so, don't push
+    import sys
+
+    if len(sys.argv) > 1 and sys.argv[1] == "--dry-run":
+        main(push=False)
+    else:
+        main()
