@@ -24,11 +24,11 @@ You can see a list of fingerprint models, their corresponding branches, and thei
 
 So you got yourself a Hyundai Santa Fe Hybrid 2022 and you install the comma device. [It says it was supported on comma.ai's vehicles listing page](https://comma.ai/vehicles).
 
-Once you do, you get `Car Unrecognized: Dashcam Mode` when you install `https://openpilot.comma.ai` on your comma device. That installer installs the "stable" `release3` branch of openpilot.
+Once you do, you get `Car Unrecognized: Dashcam Mode` when you install `https://openpilot.comma.ai` on your comma device. That installer installed the "stable" `release3` branch of openpilot.
 
-The next step is to [go through the fingerprinting guide and try the `master-ci` branch first as mentioned in the guide.](https://github.com/commaai/openpilot/wiki/Fingerprinting). If it works, you're done. If you want to get off the "unstable" `master-ci`, you may switch back to the "stable" `release3` branch when its released by installing "Custom Software" `https://openpilot.comma.ai` again.
+The next step is to [go through the fingerprinting guide and try the `master-ci` branch first as mentioned in the guide.](https://github.com/commaai/openpilot/wiki/Fingerprinting). If it works, you're done. If you want to get off the "unstable" `master-ci`, you may switch back to the "stable" `release3` branch when its new version is released by installing "Custom Software" `https://openpilot.comma.ai` again.
 
-The guide may be a bit daunting, so this repository is here as a last resort if you can't get through it.
+The fingerprint guide may be a bit daunting, so this repository is here as a last resort if you can't get through it.
 
 If "unstable" `master-ci` doesn't work, stop here and consult the [comma.ai Discord](https://discord.comma.ai) channel for your car brand. In this case, the #hyundai-kia-genesis channel may recommend you force fingerprinting your vehicle as "HYUNDAI SANTA FE HYBRID 2022".
 
@@ -36,7 +36,7 @@ With this repository, you can find the corresponding branch in the <DOC TODO> wi
 
 https://installer.comma.ai/hardcoded-fp/master-ci-hyundai_santa_fe_hybrid_2022
 
-If all goes well, you'll run through the installation process and have "unstable" `master-ci` openpilot installed on your vehicle with a hardcoded fingerprint. When `master-ci` gets updated with the fingerprint for your vehicle, uninstall and switch back to the official `master-ci` branch. Please consult your brand's Discord channel for how to push your fingerprint upstream to the official openpilot repository and information when it will be merged into `master-ci`.
+If all goes well, you'll run through the installation process and have "unstable" `master-ci` openpilot installed on your vehicle with a hardcoded fingerprint. When `master-ci` gets updated with the fingerprint for your vehicle, uninstall and switch back to the official `master-ci` branch. Please consult your brand's Discord channel for how to push your fingerprint upstream to the official openpilot repository and information on when it will be merged in.
 
 ## "Stable" `release3` Option
 
