@@ -123,6 +123,7 @@ def generate_branch(base, car):
     )
     return branch_name
 
+
 def generate_html(base_cars_base_branches):
     header = """
 <html>
@@ -160,7 +161,7 @@ Please see the <a href="https://github.com/hardcoded-fp/openpilot/">README for g
             body += f"<li><code>{car}</code>"
             body += f"<ul>"
             body += f"<li>Custom Software URL: <code>https://installer.comma.ai/hardcoded-fp/{base_cars_base_branches[base][car]}</code></li>"
-            body += f"<li><a href=\"https://github.com/hardcoded-fp/openpilot/tree/{base_cars_base_branches[base][car]}\">View on GitHub</a></li>"
+            body += f'<li><a href="https://github.com/hardcoded-fp/openpilot/tree/{base_cars_base_branches[base][car]}">View on GitHub</a></li>'
             body += f"</ul>"
             body += f"</li>"
 
@@ -173,6 +174,7 @@ Please see the <a href="https://github.com/hardcoded-fp/openpilot/">README for g
     os.system("mkdir -p pages")
     with open("pages/index.html", "w") as f:
         f.write(header + body + footer)
+
 
 def main(push=True):
     prepare_op_repo()
@@ -204,6 +206,7 @@ def main(push=True):
         os.system("cp .git/config comma_openpilot/.git/config")
         logging.info("Pushing branches to origin")
         os.system("cd comma_openpilot && git push origin --force --all")
+
 
 if __name__ == "__main__":
     # Check if args has dry run, if so, don't push
