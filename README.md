@@ -6,11 +6,11 @@
 
 ## How and Why to Use
 
-openpilot queries the firmware of your vehicle upon start and configures itself to your vehicle accordingly with a list of pre-existing firmwares in the codebase. This process is called [Fingerprinting](https://github.com/commaai/openpilot/wiki/Fingerprinting). If you currently see an error of `Car Unrecognized: Dashcam Mode`, you should try to go through the [fingerprinting guide](https://github.com/commaai/openpilot/wiki/Fingerprinting). *Please make sure to follow the suggestion in the guide to try the `master-ci` branch first.*
+openpilot queries the firmware of your vehicle upon start and configures itself to your vehicle accordingly with a list of pre-existing firmwares in the codebase. This process is called [Fingerprinting](https://github.com/commaai/openpilot/wiki/Fingerprinting). If you currently see an error of `Car Unrecognized: Dashcam Mode`, you should try to go through the [fingerprinting guide](https://github.com/commaai/openpilot/wiki/Fingerprinting). *Please make sure to follow the suggestion in the guide to try the `master-ci` branch first and reaching out to the vehicle brand's Discord channel if you have issues.*
 
-If you are having trouble going through the fingerprinting guide, you could use this repository to install a version of openpilot on your vehicle with a hardcoded fingerprint so you can get things working ASAP. This method does not require knowledge of SSH, editing code, or modifying system files.
+If you are having trouble going through the fingerprinting guide and after consulting the vehicle brand's Discord channel, you may agree to use this repository to install a version of openpilot on your vehicle with a hardcoded fingerprint so you can get things working ASAP. This method does not require knowledge of SSH, editing code, or modifying system files.
 
-_Be aware that choosing and setting an erronous fingerprint can and usually will cause your vehicle and openpilot to behave unexpectedly_. **Consult your vehicle brand's Discord channel for guidance first.**
+_Be aware that choosing and setting an erronous fingerprint can and usually will cause your vehicle and openpilot to behave unexpectedly_. **To repeat, consult your vehicle brand's Discord channel for guidance first.**
 
 This repository is not to be considered a replacement for proper fingerprinting and should be used as an emergency, last, and temporary resort. As such, it does not apply cosmetic changes to the UI to disable warning messages such as "untested branch" as that is a genuine warning. Users and resident vehicle brand experts prescribing this should campaign and create an [pull request for the proper upstreaming of their fingerprints to the official openpilot repository](https://github.com/commaai/openpilot/pulls). The commits of this repository are direct child commits of the official commits.
 
@@ -23,24 +23,6 @@ A common feature suggestion for comma.ai's openpilot is to have a selectable veh
 You can see a list of fingerprint models, their corresponding installer URLs for the [URL installer](https://github.com/commaai/openpilot/wiki/Forks#url-installers-at-installation-screen), and a link to a GitHub view of the branches here:
 
 https://hardcoded-fp.github.io/openpilot/
-
-## Example
-
-So you got yourself a Hyundai Santa Fe Hybrid 2022 and you install the comma device. [It says it was supported on comma.ai's vehicles listing page](https://comma.ai/vehicles).
-
-Once you do, you get `Car Unrecognized: Dashcam Mode` when you install `https://openpilot.comma.ai` on your comma device. That installer installed the "stable" `release3` branch of openpilot.
-
-The next step is to [go through the fingerprinting guide and try the `master-ci` branch first as mentioned in the guide.](https://github.com/commaai/openpilot/wiki/Fingerprinting). If it works, you're done. If you want to get off the "unstable" `master-ci`, you may switch back to the "stable" `release3` branch when its new version is released by installing "Custom Software" `https://openpilot.comma.ai` again.
-
-The fingerprint guide may be a bit daunting, so this repository is here as a last resort if you can't get through it.
-
-If "unstable" `master-ci` doesn't work, stop here and consult the [comma.ai Discord](https://discord.comma.ai) channel for your car brand. In this case, the #hyundai-kia-genesis channel may recommend you force fingerprinting your vehicle as "HYUNDAI SANTA FE HYBRID 2022".
-
-With this repository's [generated documentation](https://hardcoded-fp.github.io/openpilot/), you can find the corresponding installer/branch with that hardcoded fingerprint. In this case, the corresponding Custom Software installer URL is:
-
-https://installer.comma.ai/hardcoded-fp/master-ci-hyundai-santa-fe-hybrid-2022
-
-If all goes well, you'll run through the installation process and have "unstable" `master-ci` openpilot installed on your vehicle with a hardcoded fingerprint. When `master-ci` gets updated with the fingerprint for your vehicle, uninstall and switch back to the official `master-ci` branch. Please consult your brand's Discord channel for how to push your fingerprint upstream to the official openpilot repository and information on when it will be merged in.
 
 ## "Stable" `release3` Option
 
