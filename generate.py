@@ -129,6 +129,9 @@ body {
 <body>
 <h1>Hardcoded Fingerprint comma.ai openpilot Continuous Micro-Fork Generator branches</h1>
 <p>
+<em>PRESCRIPTION ONLY: Consult your vehicle brand's Discord channel for guidance first.</em>
+</p>
+<p>
 ⚠️ Only to be used as a last resort! ⚠️
 </p>
 <p>

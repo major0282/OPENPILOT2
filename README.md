@@ -1,5 +1,7 @@
 # Hardcoded Fingerprint comma.ai openpilot Continuous Micro-Fork Generator
 
+*PRESCRIPTION ONLY: Consult your vehicle brand's Discord channel for guidance first.*
+
 ## How and Why to Use
 
 openpilot queries the firmware of your vehicle upon start and configures itself to your vehicle accordingly with a list of pre-existing firmwares in the codebase. This process is called [Fingerprinting](https://github.com/commaai/openpilot/wiki/Fingerprinting). If you currently see an error of `Car Unrecognized: Dashcam Mode`, you should try to go through the [fingerprinting guide](https://github.com/commaai/openpilot/wiki/Fingerprinting). *Please make sure to follow the suggestion in the guide to try the `master-ci` branch first.*
