@@ -48,6 +48,10 @@ Users who are forcing a fingerprint on "stable" `release3` to take advantage of 
 
 ## Design Questions
 
+### How often are the branches generated?
+
+Every hour. If the base commits haven't changed, the generated commits have a stable hash and will not change.
+
 ### Custom Forks?
 
 This is generally not necessary for other forks as many of them have vehicle selectors. This is only useful for openpilot codebases without selectors such as comma.ai's official openpilot.
