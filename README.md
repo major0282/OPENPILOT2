@@ -18,7 +18,7 @@ A common feature suggestion for comma.ai's openpilot is to have a selectable veh
 
 You can see a list of fingerprint models, their corresponding branches, and their corresponding URLs for the [URL installer](https://github.com/commaai/openpilot/wiki/Forks#url-installers-at-installation-screen) here:
 
-<TODO>
+https://hardcoded-fp.github.io/openpilot/
 
 ## Example
 
@@ -32,7 +32,7 @@ The fingerprint guide may be a bit daunting, so this repository is here as a las
 
 If "unstable" `master-ci` doesn't work, stop here and consult the [comma.ai Discord](https://discord.comma.ai) channel for your car brand. In this case, the #hyundai-kia-genesis channel may recommend you force fingerprinting your vehicle as "HYUNDAI SANTA FE HYBRID 2022".
 
-With this repository, you can find the corresponding branch in the <DOC TODO> with that hardcoded fingerprint. In this case, the corresponding branch is `master-ci-hyundai_santa_fe_hybrid_2022`. An installer URL to enter for Custom Software will be listed as well; in this case, it will be:
+With this repository's [generated documentation](https://hardcoded-fp.github.io/openpilot/), you can find the corresponding branch with that hardcoded fingerprint. In this case, the corresponding branch is `master-ci-hyundai_santa_fe_hybrid_2022`. An installer URL to enter for Custom Software will be listed as well; in this case, it will be:
 
 https://installer.comma.ai/hardcoded-fp/master-ci-hyundai_santa_fe_hybrid_2022
 
