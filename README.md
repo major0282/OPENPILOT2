@@ -6,7 +6,7 @@ openpilot queries the firmware of your vehicle upon start and configures itself 
 
 If you are having trouble going through the fingerprinting guide, you could use this repository to install a version of openpilot on your vehicle with a hardcoded fingerprint so you can get things working ASAP. This method does not require knowledge of SSH, editing code, or modifying system files.
 
-_Be aware that choosing and setting an erronous fingerprint can and usually will cause your vehicle and openpilot to behave unexpectedly_. **Consult your vehicle's Discord channel for guidance first.**
+_Be aware that choosing and setting an erronous fingerprint can and usually will cause your vehicle and openpilot to behave unexpectedly_. **Consult your vehicle brand's Discord channel for guidance first.**
 
 This repository is not to be considered a replacement for proper fingerprinting and should be used as an emergency, last, and temporary resort. As such, it does not apply cosmetic changes to the UI to disable warning messages such as "untested branch" as that is a genuine warning. Users of this should campaign and create an issue for the proper upstreaming of their fingerprints to the official openpilot repository. The commits of this repository are direct child commits of the official commits.
 
