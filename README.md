@@ -1,5 +1,7 @@
 # Hardcoded Fingerprint comma.ai openpilot Continuous Micro-Fork Generator
 
+![label_of_a_large_fingerprint_logo_on_a_single_prescription_pill_bottle_that_is_transparent_orange__product_image_](https://github.com/hardcoded-fp/openpilot/assets/5363/e209996e-d1dc-45ff-8745-c5fbeea4573c)
+
 *PRESCRIPTION ONLY: Consult your vehicle brand's Discord channel for guidance first.*
 
 ## How and Why to Use
