@@ -20,7 +20,7 @@ The branches here should be considered a temporary solution until the official o
 
 A common feature suggestion for comma.ai's openpilot is to have a selectable vehicle selector in the settings if a vehicle is unrecognized. This is a temporary out-of-openpilot-codebase solution until such functionality is implemented and present.
 
-You can see a list of fingerprint models, their corresponding branches, and their corresponding URLs for the [URL installer](https://github.com/commaai/openpilot/wiki/Forks#url-installers-at-installation-screen) here:
+You can see a list of fingerprint models, their corresponding installer URLs for the [URL installer](https://github.com/commaai/openpilot/wiki/Forks#url-installers-at-installation-screen), and a link to a GitHub view of the branches here:
 
 https://hardcoded-fp.github.io/openpilot/
 

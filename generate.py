@@ -110,8 +110,16 @@ def generate_branch(base, car):
     # Append 'export FINGERPRINT="car name"' to the end of launch_env.sh
     os.system(f"echo 'export FINGERPRINT=\"{car}\"' >> comma_openpilot/launch_env.sh")
     # Commit the changes
+    # Get date of current commit
+    commit_date = os.popen(
+        "cd comma_openpilot && git log -1 --format=%cd --date=iso-strict"
+    ).read()
+    author_date = os.popen(
+        "cd comma_openpilot && git log -1 --format=%ad --date=iso-strict"
+    ).read()
+
     os.system(
-        f"cd comma_openpilot && git add launch_env.sh && GIT_AUTHOR_DATE='Fri Jul 29 00:00:00 2023 -0700' GIT_COMMITTER_DATE='Fri Jul 29 00:00:00 2023 -0700' git commit -m 'Hardcode fingerprint for {car}'"
+        f"cd comma_openpilot && git add launch_env.sh && GIT_AUTHOR_DATE='{author_date}' GIT_COMMITTER_DATE='{commit_date}' git commit -m 'Hardcode fingerprint for {car}'"
     )
     return branch_name
 
@@ -151,6 +159,7 @@ Please see the <a href="https://github.com/hardcoded-fp/openpilot/">README for g
             body += f"<li><code>{car}</code>"
             body += f"<ul>"
             body += f"<li>Custom Software URL: <code>https://installer.comma.ai/hardcoded-fp/{base_cars_base_branches[base][car]}</code></li>"
+            body += f"<li><a href=\"https://github.com/hardcoded-fp/openpilot/tree/{base_cars_base_branches[base][car]}\">View on GitHub</a></li>"
             body += f"</ul>"
             body += f"</li>"
 
