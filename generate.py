@@ -146,7 +146,8 @@ Please see the <a href="https://github.com/hardcoded-fp/openpilot/">README for g
     for base in base_cars_base_branches:
         body += f"<h2>{base}</h2>"
         body += "<ul>"
-        for car in base_cars_base_branches[base]:
+        sorted_cars = sorted(base_cars_base_branches[base].keys())
+        for car in sorted_cars:
             body += f"<li><code>{car}</code>"
             body += f"<ul>"
             body += f"<li>Custom Software URL: <code>https://installer.comma.ai/hardcoded-fp/{base_cars_base_branches[base][car]}</code></li>"
