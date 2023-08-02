@@ -6,6 +6,8 @@
 
 ## How and Why to Use
 
+Open comma.ai openpilot fingerprinting issues: https://github.com/commaai/openpilot/issues?q=is%3Aissue+is%3Aopen+fingerprint 
+
 openpilot queries the firmware of your vehicle upon start and configures itself to your vehicle accordingly with a list of pre-existing firmwares in the codebase. This process is called [Fingerprinting](https://github.com/commaai/openpilot/wiki/Fingerprinting). If you currently see an error of `Car Unrecognized: Dashcam Mode`, you should try to go through the [fingerprinting guide](https://github.com/commaai/openpilot/wiki/Fingerprinting). *Please make sure to follow the suggestion in the guide to try the `master-ci` branch first and reaching out to the vehicle brand's Discord channel if you have issues.*
 
 If you are having trouble going through the fingerprinting guide and after consulting the vehicle brand's Discord channel, you may agree to use this repository to install a version of openpilot on your vehicle with a hardcoded fingerprint so you can get things working ASAP. This method does not require knowledge of SSH, editing code, or modifying system files.
