@@ -20,7 +20,7 @@ This GitHub repository periodically continuously generates openpilot branches of
 
 The branches here should be considered a temporary solution until the official openpilot repository is updated with the necessary fingerprints in the "unstable" `master-ci` branch. At which point, users should switch back to the official openpilot branches of "unstable" `master-ci` once their desired fingerprints are added to that branch.
 
-A common feature suggestion for comma.ai's openpilot is to have a selectable vehicle selector in the settings if a vehicle is unrecognized. This is a temporary out-of-openpilot-codebase solution until such functionality is implemented and present.
+A common feature suggestion for comma.ai's openpilot is to have a selectable vehicle selector in the settings if a vehicle is unrecognized. This is a temporary out-of-openpilot-codebase solution until such functionality is implemented and present. This repository may still be useful in the case of [false positives](https://github.com/commaai/openpilot/issues/28483) if such a selector is implemented, access to it is unavailable due to the false positive.
 
 You can see a list of fingerprint models, their corresponding installer URLs for the [URL installer](https://github.com/commaai/openpilot/wiki/Forks#url-installers-at-installation-screen), and a link to a GitHub view of the branches here:
 
