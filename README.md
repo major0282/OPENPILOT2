@@ -36,7 +36,7 @@ Users who are forcing a fingerprint on "stable" `release3` to take advantage of 
 
 ### How often are the branches generated?
 
-Every hour. If the base commits haven't changed, the generated commits have a stable hash and will not change.
+Every day. If the base commits haven't changed, the generated commits have a stable hash and will not change.
 
 ### Custom Forks?
 
