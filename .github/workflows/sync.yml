@@ -2,8 +2,8 @@ name: Continuous Sync
 
 on:
   schedule:
-    # Roughly 2AM PST
-    - cron: "0 9 * * *"
+    # Roughly 4AM PST
+    - cron: "0 11 * * *"
   workflow_dispatch:
   push:
     branches:
