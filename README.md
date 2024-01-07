@@ -16,9 +16,9 @@ _Be aware that choosing and setting an erronous fingerprint can and usually will
 
 This repository is not to be considered a replacement for proper fingerprinting and should be used as an emergency, last, and temporary resort. As such, it does not apply cosmetic changes to the UI to disable warning messages such as "untested branch" as that is a genuine warning. Users and resident vehicle brand experts prescribing this should campaign and create a [pull request for the proper upstreaming of their fingerprints to the official openpilot repository](https://github.com/commaai/openpilot/pulls). The commits of this repository are direct child commits of the official commits.
 
-This GitHub repository periodically continuously generates openpilot branches off of openpilot's "deployment"-style and "unstable" `master-ci` branches with a hardcoded fingerprint identification of the vehicle for the purpose of installing the "unstable" `master-ci` flavor of openpilot on un-fingerprinted vehicles where there is currently fingerprinting trouble.
+This GitHub repository periodically continuously generates openpilot branches off of openpilot's "deployment"-style and "unstable" `master-ci`/`nightly` branches with a hardcoded fingerprint identification of the vehicle for the purpose of installing the "unstable" `master-ci`/`nightly` flavor of openpilot on un-fingerprinted vehicles where there is currently fingerprinting trouble.
 
-The branches here should be considered a temporary solution until the official openpilot repository is updated with the necessary fingerprints in the "unstable" `master-ci` branch. At which point, users should switch back to the official openpilot branches of "unstable" `master-ci` once their desired fingerprints are added to that branch.
+The branches here should be considered a temporary solution until the official openpilot repository is updated with the necessary fingerprints in the "unstable" `master-ci`/`nightly` branch. At which point, users should switch back to the official openpilot branches of "unstable" `master-ci`/`nightly` once their desired fingerprints are added to that branch.
 
 A common feature suggestion for comma.ai's openpilot is to have a selectable vehicle selector in the settings if a vehicle is unrecognized. This is a temporary out-of-openpilot-codebase solution until such functionality is implemented and present. This repository may still be useful in the case of [false positives](https://github.com/commaai/openpilot/issues/28483) if such a selector is implemented and if access to it is unavailable due to the false positive.
 
@@ -32,13 +32,13 @@ https://hardcoded-fp.github.io/openpilot/
 
 This GitHub repository also periodically continuously generates openpilot branches off of openpilot's "deployment"-style "stable" `release3` branches with a hardcoded fingerprint identification of the vehicle for the purpose of installing the respective "stable" `release3` flavors of openpilot on un-fingerprinted vehicles where there is currently a massive lag in the freshness of fingerprints in the "stable" `release3` compared to the "unstable" `master-ci` that has more current fingerprints but they want the possible increased "stable" `release3`'s stability.
 
-Users who are forcing a fingerprint on "stable" `release3` to take advantage of the stability not present in `master-ci` should note that forced fingerprinting identities of vehicles into "stable" `release3` may turn it "unstable" and may cause unexpected behavior. Specific fingerprint data has historically been used to work around bugs in interactions with the vehicle of certain firmwares and such workarounds may not be present in the base "stable" `release3` codebase. If "stable" `release3` turns out to be "unstable", users should switch to the "unstable" `master-ci` branch and work with the community and developers to make it "stable" again in time for the next release of the "stable" `release3`.
+Users who are forcing a fingerprint on "stable" `release3` to take advantage of the stability not present in `master-ci` should note that forced fingerprinting identities of vehicles into "stable" `release3` may turn it "unstable" and may cause unexpected behavior. Specific fingerprint data has historically been used to work around bugs in interactions with the vehicle of certain firmwares and such workarounds may not be present in the base "stable" `release3` codebase. If "stable" `release3` turns out to be "unstable", users should switch to the "unstable" `master-ci`/`nightly` branch and work with the community and developers to make it "stable" again in time for the next release of the "stable" `release3`.
 
 ## Design Questions
 
 ### How often are the branches generated?
 
-Every day. If the base commits haven't changed, the generated commits have a stable hash and will not change.
+Every day. If the base commits haven't changed, the generated commits have a stable hash and will not change. Note that if the upstream branches are not generated or updated in comma's repo be it from error or intentionally, neither will this.
 
 ### Custom Forks?
 
