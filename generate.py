@@ -190,7 +190,7 @@ def main(push=True):
     prepare_op_repo()
 
     base_cars = {}
-    base_branches = ["master-ci", "release3"]
+    base_branches = ["master-ci", "nightly", "release3"]
     for base in base_branches:
         base_cars[base] = parse_cars(base)
 
